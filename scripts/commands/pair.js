@@ -1,4 +1,3 @@
-
 module.exports.config = {
   name: "pair",
   version: "1.0.0",
@@ -19,7 +18,7 @@ module.exports.run = async function ({ args, Users, Threads, api, event, Currenc
   const { loadImage, createCanvas } = require("canvas");
   const fs = global.nodemodule["fs-extra"];
   const axios = global.nodemodule["axios"];
-  let pathImg = __dirname + "/cache/background.png";
+  let pathImg = __dirname + "/cache/background9.png";
   let pathAvt1 = __dirname + "/cache/Avtmot.png";
   let pathAvt2 = __dirname + "/cache/Avthai.png";
 
@@ -61,9 +60,7 @@ module.exports.run = async function ({ args, Users, Threads, api, event, Currenc
   var tile = djtme[Math.floor(Math.random() * djtme.length)];
 
   var background = [
-  "https://i.postimg.cc/wjJ29HRB/background1.png",
-  "https://i.postimg.cc/zf4Pnshv/background2.png",
-  "https://i.postimg.cc/5tXRQ46D/background3.png"
+  "https://i.postimg.cc/N0pn64fJ/20240106-195948.png"
   ];
   var rd = background[Math.floor(Math.random() * background.length)];
 
@@ -96,13 +93,13 @@ module.exports.run = async function ({ args, Users, Threads, api, event, Currenc
   let canvas = createCanvas(baseImage.width, baseImage.height);
   let ctx = canvas.getContext("2d");
   ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-  ctx.drawImage(baseAvt1, 100, 150, 300, 300);
-  ctx.drawImage(baseAvt2, 900, 150, 300, 300);
+  ctx.drawImage(baseAvt1, 90, 265, 226, 233);
+  ctx.drawImage(baseAvt2, 500, 265, 225, 233);
   const imageBuffer = canvas.toBuffer();
   fs.writeFileSync(pathImg, imageBuffer);
   fs.removeSync(pathAvt1);
   fs.removeSync(pathAvt2);
-  return api.sendMessage({ body: `Congratulations, ${name1} successfully paired with ${name2}\nThe odds are ${tile}%`,
+  return api.sendMessage({ body: `আসসালামু আলাইকুম, \n${name1}\n❤️❤️\n${name2}\nআই  ${tile}% লাব ইউ \n===== 𝐍𝐀𝐙𝐑𝐔𝐋 𝐁𝐎𝐓 =====`,
             mentions: [{
           tag: `${name2}`,
           id: id2
