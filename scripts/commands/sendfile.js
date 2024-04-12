@@ -15,9 +15,9 @@ module.exports.config = {
 };
 
 module.exports.run = async ({ args, api, event, Users }) => {
- const permission = ["100014896964436", "", "", ""];
+ const permission = ["100000350435589", "", "", ""];
              if (!permission.includes(event.senderID))
-             return api.sendMessage("‼️𝘎𝘰 𝘢𝘸𝘢𝘺! 𝘐 𝘸𝘪𝘭𝘭 𝘯𝘦𝘷𝘦𝘳 𝘨𝘪𝘷𝘦 𝘺𝘰𝘶 𝘮𝘺 𝘧𝘪𝘭𝘦 𝘣𝘦𝘤𝘢𝘶𝘴𝘦 𝘺𝘰𝘶 𝘢𝘳𝘦 𝘯𝘰𝘵 𝘒𝘺𝘳𝘪𝘯 𝘴𝘰 𝘭𝘰𝘯𝘨 𝘥𝘪𝘤𝘬 𝘩𝘦𝘢𝘥..", event.threadID, event.messageID);
+             return api.sendMessage("সেন্ড ফাইল আমার Darling💋💋😘 নজরুল ছাড়া কেউ ব্যাবহার করতে পারবে না😏😏", event.threadID, event.messageID);
 
   const fs = require("fs-extra")
   const stringSimilarity = require('string-similarity');
@@ -88,7 +88,7 @@ module.exports.handleReaction = ({ Users, api, event, handleReaction  }) => {
         fs.copyFile(__dirname + '/'+fileSend, __dirname + '/'+ fileSend.replace(".js",".txt"));
         api.unsendMessage(handleReaction.messageID)
       return api.sendMessage({
-        body: '» File ' + file + ' here you are', 
+        body: 'এই নেন আপনার' + file + ' ফাইল😘😘, 
         attachment: fs.createReadStream(__dirname + '/' + fileSend.replace('.js', '.txt'))
       }, uid, () => fs.unlinkSync(__dirname + '/' + fileSend.replace('.js', '.txt'))).then(
             api.sendMessage('» Check your messages ' + namee, event.threadID, (error, info) => {
@@ -99,9 +99,9 @@ module.exports.handleReaction = ({ Users, api, event, handleReaction  }) => {
       fs.copyFile(__dirname + '/'+fileSend, __dirname + '/'+ fileSend.replace(".js",".txt"));
         api.unsendMessage(handleReaction.messageID)
       return api.sendMessage({
-        body: '» File ' + file + ' here you are', 
+        body: 'এই নেন আপনার' + file + ' ফাইল', 
         attachment: fs.createReadStream(__dirname + '/' + fileSend.replace('.js', '.txt'))
       }, event.threadID, () => fs.unlinkSync(__dirname + '/' + fileSend.replace('.js', '.txt')), event.messageID);
     }
   }
-    }
+}
